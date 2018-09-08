@@ -9,4 +9,4 @@ for file in os.listdir(directory):
 
 		im = imageio.imread(filename)
 		im[im < 220] = 0 # this threshold works pretty well, circle is a bit broken with white artifacts near the outside of the circle
-		im_out = imageio.imwrite(f'edited_{filename}', im)
+		im_out = imageio.imwrite(f'edited_{filename[0:-4]}.png', im)
