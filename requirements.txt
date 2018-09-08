@@ -1,0 +1,12 @@
+# requirements
+
+imageio
+numpy
+pillow
+pylab (?)
+
+image algorithms to peruse:
+https://stackoverflow.com/questions/138250/how-can-i-read-the-rgb-value-of-a-given-pixel-in-python
+https://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color
+
+convert rgb to hsl
