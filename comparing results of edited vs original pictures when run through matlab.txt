@@ -46,3 +46,9 @@ if the bottom is white, check x many pixels below to see if it's black. X would 
 would on detect the left right, middle ish of the image so bottom and top of the flame wouldn't get affected. 
 
 would not solve random things attached to circle
+
+adjusting curves in paint.net seems promising
+levels is a bit more one dimensional
+contrast and brightness also seem one dimensional
+
+was thinking of just like a line follow detection thing? and spikes would be "dead ends" don't know how much that works
