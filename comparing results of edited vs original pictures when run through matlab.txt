@@ -1,0 +1,48 @@
+            Area                Radius                  Circularity
+OG results: 18.6212277645660	2.43460898099499	0.993110551816887
+
+Medfilt2  : 18.6144087924429	2.43416317121532	0.993292437074836
+with 5x5
+matrix
+
+Medfilt2  : 18.6212277645660	2.43460898099499	0.993457909383642
+with 7x7
+matrix
+
+Medfilt2  : 18.6220801360814	2.43466470147770	0.993435172801380
+with 9x9
+matrix
+
+increasing the matrix that the median filter uses changes the area and radius a little
+Using a 2x2 matrix introduces more noise however
+Weird that 3x3 and 5x5 have less noise while 2x2 and 4x4 have more noise
+Is 3x3 same as 7x7?
+3x3 and 7x7 look similar, but will probably show differences with different test images
+
+Links to interesting python image processing stuffs:
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_histograms/py_table_of_contents_histograms/py_table_of_contents_histograms.html#table-of-content-histograms
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghcircles/py_houghcircles.html#hough-circles
+https://pillow.readthedocs.io/en/5.2.x/reference/ImageEnhance.html
+http://www.imagemagick.org/script/index.php#features
+https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_gradients/py_gradients.html?highlight=gradient
+https://scikit-image.org/docs/dev/user_guide/numpy_images.html
+
+interesting: could try finding ellipses in the processed images (using python instead of mathematica) 
+https://mathematica.stackexchange.com/questions/25589/how-can-i-detect-an-ellipse-in-a-photo 
+
+finding circles in matlab:
+https://www.mathworks.com/help/images/ref/imfindcircles.html
+
+finding approximately round things in matlab:
+https://www.mathworks.com/help/images/identifying-round-objects.html
+could just outline everything and try to find what's circular and take that as the flame
+however, doesn't solve spikiness of white pixels
+
+potential spike solution:
+since pixels that are in a line ish from the spark plugs are usually attached to the left and right of the center of the circle
+we can probably filter out the pixels that have black stuff on the top and bottom
+might not work for two pixels high but you could probably have an if else statement like
+if the bottom is white, check x many pixels below to see if it's black. X would be a threshold so that super thick things that are part of the flame don't get erased
+would on detect the left right, middle ish of the image so bottom and top of the flame wouldn't get affected. 
+
+would not solve random things attached to circle
